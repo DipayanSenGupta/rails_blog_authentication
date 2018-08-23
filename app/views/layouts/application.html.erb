@@ -35,11 +35,17 @@
 
   		<div id="main_content">
   			<div id="header">
-  				<p> <%= link_to "All Posts", posts_path %> </p>
-  				<div class="buttons">
-        		<p> <%= link_to "new post", new_post_path %> </p>
-        		<p>Logout</p>
-  				</div>
+
+
+
+	<p><%= link_to 'All Posts', posts_path	%></p>	
+
+			<div class="buttons">
+			<p><%= link_to 'new post', new_post_path,
+			class: "button"
+			%></p>
+			<p>Log out</p>	
+  			</div>
   			</div>
   			<%flash.each do |name, msg| %>
   				<%= content_tag(:div, msg, class:alert) %>
