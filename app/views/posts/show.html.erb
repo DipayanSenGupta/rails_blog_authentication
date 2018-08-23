@@ -4,7 +4,9 @@
 </h1>
 
 <p class="date">
-	Submitted <%= time_ago_in_words(@post.created_at) %>Ago
+	Submitted <b><%= time_ago_in_words(@post.created_at) %> </b> ago | 
+	<%= link_to 'Edit', edit_post_path(@post) %>
+	<%= link_to "Delete", @post, :method => :delete, :confirm => "Are you sure ?"%>
 </p>
 
 <p class="body">
