@@ -1,24 +1,7 @@
-# README
+# Rails Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*POST and Comments enabled
+*Devise is installed for authentication
+*Email authentication is not enabled
+*Photo doesn't take root_path, had to save it in public folder
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
