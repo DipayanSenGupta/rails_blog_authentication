@@ -12,11 +12,18 @@
 
   <body>
   	<div id=sidebar>
-  		<div>
+  		<!-- <div>
   			<img id="logo" src="logo.png">
-  		</div>
-
-  		<ul>
+  		</div> -->
+      <div id="logo"> 
+        <%= link_to root_path do %>
+          <p style="  background-image: url(logo.png);
+      opacity :0.2; z-index:-9999; position :relative"> 
+            <%= image_tag "logo.png" %></p>
+        <%end%>
+      </div>
+  		
+      <ul>
   			<li class="category">Website</li>
   			<li><%= link_to "Blog", root_path %></li>
   			<li><%= link_to "About", about_path %></li>
@@ -30,8 +37,8 @@
   			<li><a href="">Email</a></li>
   			
   		</ul>
-  		<p class="sign_in">Admin Login</p>
-	</div>
+  		<!-- <p class="sign_in">Admin Login</p> -->
+  </div>
 
   		<div id="main_content">
   			<div id="header">
@@ -43,13 +50,21 @@
 			<p><%= link_to 'Back to All Posts', root_path	%></p>			
 			<%end%>
 			
+      <% if user_signed_in?%>
 			<div class="buttons">
 			<p><%= link_to 'new post', new_post_path,
 			class: "button"
 			%></p>
-			<p>Log out</p>	
-  			</div>
-  			</div>
+      <%= link_to("Log Out", destroy_user_session_path, method: :delete) 
+      %>﻿ 
+  		</div>
+      <%else%>
+      &nbsp;&nbsp;&nbsp;
+            <a class="sign_in" href="/users/sign_in">Login</a>
+
+      <%end%>
+  		
+      	</div>
   			<%flash.each do |name, msg| %>
   				<%= content_tag(:div, msg, class:alert) %>
   			<% end %>
